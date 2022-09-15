@@ -1,10 +1,7 @@
-let playerSelection = prompt("Rock, paper or scissors");
-const computerSelection = getComputerChoice();
-
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3)
     let gameOptions = ['rock', 'paper', 'scissors'];
-
+    
     let choise = gameOptions[randomNumber];
     return(choise);   
 }
@@ -28,13 +25,18 @@ function playRound(playerSelection, computerSelection) {
     } else if (player == "paper" && computer == "scissors") {
         return("You Lose! Scissors beats Paper")
     } else {
-
+        
     }
 }
 
-function game(playRound) {
-    let playerScore = 0
-    let computerScore = 0
+function game() {
+    let playerSelection = prompt("Rock, paper or scissors");
+    const computerSelection = getComputerChoice();
+    
+    playRound();
+    
+    
+
 
 }
 
