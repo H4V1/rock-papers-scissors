@@ -9,7 +9,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     playerSelection.toLowerCase();
     
-    if(playerSelection === computer) {
+    if(playerSelection === computerSelection) {
         return("It's a tie")
     } else if (playerSelection == "paper" && computerSelection == "rock") {
         return("You Win! Paper beats rock");
@@ -34,9 +34,9 @@ function game() {
     
     for (let i = 0; i < 5; i++) {
         playerSelection = prompt("Rock, paper or scissors");
-        computerSelection = 
-        playRound(playerSelection, );
-
+        computerSelection = getComputerChoice()
+        console.log(playRound(playerSelection, computerSelection));
+        
     }
 
 
