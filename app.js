@@ -7,10 +7,16 @@ function getComputerChoice() {
 }
 let playerScore = 0;
 let computerScore = 0;
+let playerSelection = document.querySelectorAll('button');
+console.log(playerSelection);
+
+playerSelection.forEach(playerSelection => playerSelection.addEventListener('click', function(e) {
+    let player = e.target.textContent;
+    console.log(playRound(player, getComputerChoice()))
+}));
 
 function playRound(playerSelection, computerSelection) {
-
-    playerSelection.toLowerCase();
+    playerSelection = playerSelection.toLowerCase();
     
     if(playerSelection === computerSelection) {
         return("It's a tie")
@@ -37,15 +43,11 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
+
 function game() {
     let playerSelection = "";
     let computerSelection = "";
-
-    for (let i = 0; i < 5; i++) {
-        playerSelection = prompt("Rock, paper or scissors");
-        computerSelection = getComputerChoice()
-        console.log(playRound(playerSelection, computerSelection)); 
-    }
 
     if (playerScore > computerScore) {
         return("Congrats! You win")
