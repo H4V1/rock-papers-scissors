@@ -12,7 +12,23 @@ console.log(playerSelection);
 
 playerSelection.forEach(playerSelection => playerSelection.addEventListener('click', function(e) {
     let player = e.target.textContent;
-    console.log(playRound(player, getComputerChoice()))
+    let result = playRound(player, getComputerChoice());
+
+    document.querySelector('#result').textContent = result;
+    document.querySelector(".playerScore").textContent = playerScore;
+    document.querySelector('.cpuScore').textContent = computerScore;
+
+    if (playerScore === 5 && computerScore < 5) {
+        document.querySelector('#result').textContent = 'You Won!';
+        playerScore = 0;
+        computerScore = 0;
+    } else if (computerScore === 5 && playerScore < 5) {
+        document.querySelector('#result').textContent = "You Lose! :(";
+        playerScore = 0;
+        computerScore = 0;
+    } else {
+        
+    }
 }));
 
 function playRound(playerSelection, computerSelection) {
@@ -45,16 +61,5 @@ function playRound(playerSelection, computerSelection) {
 
 
 
-function game() {
-    let playerSelection = "";
-    let computerSelection = "";
 
-    if (playerScore > computerScore) {
-        return("Congrats! You win")
-    } else if (computerScore > playerScore) {
-        return("You Lose! :(")
-    } else {
-
-    }
-}
 
