@@ -5,10 +5,11 @@ function getComputerChoice() {
     let choise = gameOptions[randomNumber];
     return(choise);   
 }
+
 let playerScore = 0;
 let computerScore = 0;
 let playerSelection = document.querySelectorAll('button');
-console.log(playerSelection);
+
 
 playerSelection.forEach(playerSelection => playerSelection.addEventListener('click', function(e) {
     let player = e.target.textContent;
@@ -58,8 +59,3 @@ function playRound(playerSelection, computerSelection) {
         
     }
 }
-
-
-
-
-
